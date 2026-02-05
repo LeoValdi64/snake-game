@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState, useCallback } from 'react'
+import { Gamepad2, Smartphone, Trophy } from 'lucide-react'
 
 const GRID_SIZE = 20
 const CELL_SIZE = 20
@@ -321,7 +322,7 @@ export default function SnakeGame() {
     <main className="min-h-screen bg-[#0f0f23] flex flex-col items-center justify-center p-4">
       <div className="text-center mb-4">
         <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-2 tracking-wider" style={{ fontFamily: 'monospace', textShadow: '0 0 20px #4ade80' }}>
-          🐍 RETRO SNAKE
+          RETRO SNAKE
         </h1>
         <div className="flex justify-center gap-8 text-lg">
           <p className="text-green-300">
@@ -345,8 +346,8 @@ export default function SnakeGame() {
           <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center rounded-lg">
             <h2 className="text-2xl text-green-400 mb-4 font-mono">Press SPACE or Tap to Start</h2>
             <div className="text-gray-400 text-sm space-y-1">
-              <p>🎮 Arrow keys or WASD to move</p>
-              <p>📱 Swipe on mobile</p>
+              <p><Gamepad2 className="inline-block w-4 h-4 mr-1" /> Arrow keys or WASD to move</p>
+              <p><Smartphone className="inline-block w-4 h-4 mr-1" /> Swipe on mobile</p>
               <p>⏸️ Space to pause</p>
             </div>
           </div>
@@ -357,7 +358,7 @@ export default function SnakeGame() {
             <h2 className="text-3xl text-red-500 mb-2 font-mono">GAME OVER</h2>
             <p className="text-xl text-white mb-4">Final Score: {score}</p>
             {score >= highScore && score > 0 && (
-              <p className="text-yellow-400 mb-4 animate-pulse">🏆 New High Score!</p>
+              <p className="text-yellow-400 mb-4 animate-pulse"><Trophy className="inline-block w-5 h-5 mr-1" /> New High Score!</p>
             )}
             <button
               onClick={startGame}
@@ -406,7 +407,7 @@ export default function SnakeGame() {
       </div>
 
       <footer className="mt-8 text-gray-500 text-sm">
-        Made with 🦝 by Gaspi
+        Made with love by Gaspi
       </footer>
     </main>
   )
