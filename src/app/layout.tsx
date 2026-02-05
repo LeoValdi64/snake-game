@@ -11,6 +11,10 @@ export const metadata: Metadata = {
     description: "Play the classic Snake game with a retro arcade twist! Beat your high score!",
     type: "website",
     locale: "en_US",
+    url: "https://snake-game-smoky-five.vercel.app",
+  },
+  alternates: {
+    canonical: "https://snake-game-smoky-five.vercel.app",
   },
   twitter: {
     card: "summary_large_image",
@@ -21,6 +25,23 @@ export const metadata: Metadata = {
   themeColor: "#0f0f23",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "RetroSnake",
+  description:
+    "A free online snake game with retro arcade style. Control the snake, eat food, and beat your high score.",
+  url: "https://snake-game-smoky-five.vercel.app",
+  applicationCategory: "Game",
+  genre: "Arcade",
+  operatingSystem: "Any",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,6 +50,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>

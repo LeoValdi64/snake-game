@@ -21,10 +21,10 @@ export const metadata: Metadata = {
     description:
       "Play RetroSnake, a free online snake game with retro arcade style. Use arrow keys or swipe on mobile to control the snake, eat food, and beat your high score.",
     images: ["/og-image.png"],
-    url: "https://snake-game-azure-one.vercel.app",
+    url: "https://snake-game-smoky-five.vercel.app",
   },
   alternates: {
-    canonical: "https://snake-game-azure-one.vercel.app",
+    canonical: "https://snake-game-smoky-five.vercel.app",
   },
 };
 
@@ -34,8 +34,15 @@ const jsonLd = {
   name: "RetroSnake",
   description:
     "A free online snake game with retro arcade style. Control the snake, eat food, and beat your high score.",
-  url: "https://snake-game-azure-one.vercel.app",
+  url: "https://snake-game-smoky-five.vercel.app",
   applicationCategory: "Game",
+  genre: "Arcade",
+  operatingSystem: "Any",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
 };
 
 export default function RootLayout({
