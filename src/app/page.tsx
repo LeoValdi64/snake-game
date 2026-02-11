@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { Gamepad2, Smartphone, Trophy } from 'lucide-react'
+import { Gamepad2, Smartphone, Trophy, ArrowUp, ArrowDown, ArrowLeft, ArrowRight, Pause } from 'lucide-react'
 
 const GRID_SIZE = 20
 const CELL_SIZE = 20
@@ -334,12 +334,12 @@ export default function SnakeGame() {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative w-full max-w-[400px]">
         <canvas
           ref={canvasRef}
           width={GRID_SIZE * CELL_SIZE}
           height={GRID_SIZE * CELL_SIZE}
-          className="border-4 border-green-500 rounded-lg shadow-[0_0_30px_rgba(74,222,128,0.3)]"
+          className="border-4 border-green-500 rounded-lg shadow-[0_0_30px_rgba(74,222,128,0.3)] w-full h-auto"
         />
 
         {!gameStarted && (
@@ -348,7 +348,7 @@ export default function SnakeGame() {
             <div className="text-gray-400 text-sm space-y-1">
               <p><Gamepad2 className="inline-block w-4 h-4 mr-1" /> Arrow keys or WASD to move</p>
               <p><Smartphone className="inline-block w-4 h-4 mr-1" /> Swipe on mobile</p>
-              <p>⏸️ Space to pause</p>
+              <p><Pause className="inline-block w-4 h-4 mr-1" /> Space to pause</p>
             </div>
           </div>
         )}
@@ -377,33 +377,33 @@ export default function SnakeGame() {
         )}
       </div>
 
-      <div className="mt-6 flex gap-4 md:hidden">
+      <div className="mt-6 flex flex-col items-center gap-2 md:hidden">
         <button
           onClick={() => directionRef.current !== 'DOWN' && (directionRef.current = 'UP')}
-          className="w-16 h-16 bg-green-600 rounded-lg text-2xl active:bg-green-500"
+          className="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center active:bg-green-500"
         >
-          ⬆️
+          <ArrowUp className="w-7 h-7 text-white" />
         </button>
-      </div>
-      <div className="flex gap-4 md:hidden">
-        <button
-          onClick={() => directionRef.current !== 'RIGHT' && (directionRef.current = 'LEFT')}
-          className="w-16 h-16 bg-green-600 rounded-lg text-2xl active:bg-green-500"
-        >
-          ⬅️
-        </button>
-        <button
-          onClick={() => directionRef.current !== 'UP' && (directionRef.current = 'DOWN')}
-          className="w-16 h-16 bg-green-600 rounded-lg text-2xl active:bg-green-500"
-        >
-          ⬇️
-        </button>
-        <button
-          onClick={() => directionRef.current !== 'LEFT' && (directionRef.current = 'RIGHT')}
-          className="w-16 h-16 bg-green-600 rounded-lg text-2xl active:bg-green-500"
-        >
-          ➡️
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={() => directionRef.current !== 'RIGHT' && (directionRef.current = 'LEFT')}
+            className="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center active:bg-green-500"
+          >
+            <ArrowLeft className="w-7 h-7 text-white" />
+          </button>
+          <button
+            onClick={() => directionRef.current !== 'UP' && (directionRef.current = 'DOWN')}
+            className="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center active:bg-green-500"
+          >
+            <ArrowDown className="w-7 h-7 text-white" />
+          </button>
+          <button
+            onClick={() => directionRef.current !== 'LEFT' && (directionRef.current = 'RIGHT')}
+            className="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center active:bg-green-500"
+          >
+            <ArrowRight className="w-7 h-7 text-white" />
+          </button>
+        </div>
       </div>
 
       <footer className="mt-8 text-gray-500 text-sm">
