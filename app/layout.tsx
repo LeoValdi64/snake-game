@@ -30,14 +30,15 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "VideoGame",
   name: "RetroSnake",
   description:
     "A free online snake game with retro arcade style. Control the snake, eat food, and beat your high score.",
   url: "https://snake-game-smoky-five.vercel.app",
-  applicationCategory: "Game",
   genre: "Arcade",
+  gamePlatform: "Web Browser",
   operatingSystem: "Any",
+  playMode: "SinglePlayer",
   offers: {
     "@type": "Offer",
     price: "0",
